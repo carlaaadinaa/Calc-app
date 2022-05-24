@@ -20,11 +20,13 @@ function Calculator() {
   const deleteAll = () => {
     setInput(0);
     setPrev(0);
+    setOp([]);
   }
 
   const deleteOneByOne = () => {
     setInput(String(input).slice(0, - 1));
     setPrev(String(prev).slice(0, -1));
+    setOp(op.slice(0, -1));
   }
 
  const calculate = () => {
