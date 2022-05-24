@@ -1,0 +1,86 @@
+body {
+  background-color: mintcream;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: slategrey;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.mycalculator {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: minmax(70px, auto) repeat(6, 70px);
+}
+
+.double {
+  grid-column: span 2;
+  background-color: rgb(233, 183, 56);
+}
+
+.triple {
+  grid-column: span 3;
+  background-color: rgb(233, 183, 56);
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color:darkcyan;
+  width: 310px;
+  border: 50px;
+  padding: 5px;
+  inline-size: auto; 
+  overflow-wrap: break-word;
+  text-align: right;
+}
+
+.previousOp {
+  font-size: 15px;
+  width: 300px;
+  border: 0px;
+  color: rgb(189, 218, 243);
+}
+
+.currentOp {
+  font-size: 40px;
+  color: aliceblue;
+}
+
+.clear {
+  background-color: rgb(233, 183, 56);
+}
+
+.operatorsStyle {
+  background-color: rgb(233, 183, 56);
+}
+
+.operatorsStyle:hover{
+  background-color: darkgoldenrod;
+}
+
+.classicb:hover{
+  background-color: darkgray;
+}
+
+.clear:hover {
+  background-color: darkgoldenrod;
+}
+
+.double:hover {
+  background-color: darkgoldenrod;
+}
+
+.triple:hover {
+  background-color: darkgoldenrod;
+}
+
+.mycalculator > button {
+  font-size: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border: 1px solid white;
+  cursor: pointer;
+}
