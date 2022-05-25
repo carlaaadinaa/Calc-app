@@ -6,26 +6,32 @@ function Calculator() {
   
   const [prev, setPrev] = useState(0);
   const [input, setInput] = useState(0);
-  const [op, setOp] = useState([]);
+  const [op, setOp] = useState(0);
  
   const clickOnNumbers= (e) => {
-    setInput(parseInt(e.target.value));
-    setPrev(parseInt(input));
+    
+    if(op === 0) {
+      setPrev(parseInt(prev + e.target.value));
+      setInput(parseInt(input + e.target.value)); 
+    } else {   
+      setInput(parseInt(input + e.target.value));
+    }    
+    
   }
 
   const clickOnOperators = (e) => {
     setOp(e.target.value);
+    setInput(0);
   }
 
   const deleteAll = () => {
     setInput(0);
     setPrev(0);
-    setOp([]);
+    setOp(0);
   }
 
   const deleteOneByOne = () => {
     setInput(String(input).slice(0, - 1));
-    setPrev(String(prev).slice(0, -1));
     setOp(op.slice(0, -1));
   }
 
@@ -34,19 +40,19 @@ function Calculator() {
   
   if(op === "+"){
     result = prev + input;
-    setPrev(null);
+    setPrev(result);
     setInput(result);
   } else if(op === "-"){
     result = prev - input;
-    setPrev(null);
+    setPrev(result);
     setInput(result);
   } else if(op === "*"){
     result = prev * input;
-    setPrev(null);
+    setPrev(result);
     setInput(result);
   } else if(op === "/"){
     result = prev / input;
-    setPrev(null);
+    setPrev(result);
     setInput(result);
   } else {
     setPrev(null);
