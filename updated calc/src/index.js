@@ -31,6 +31,7 @@ function Calculator() {
   }
 
   const deleteOneByOne = () => {
+    setPrev(String(prev).slice(0, -1));
     setInput(String(input).slice(0, - 1));
     setOp(op.slice(0, -1));
   }
