@@ -6,11 +6,11 @@ function Calculator() {
   
   const [prev, setPrev] = useState(0);
   const [input, setInput] = useState(0);
-  const [op, setOp] = useState(0);
+  const [op, setOp] = useState("");
  
   const clickOnNumbers= (e) => {
     
-    if(op === 0) {
+    if(op == 0) {
       setPrev(parseInt(prev + e.target.value));
       setInput(parseInt(input + e.target.value)); 
     } else {   
@@ -20,14 +20,30 @@ function Calculator() {
   }
 
   const clickOnOperators = (e) => {
+    let result1=null;
+
     setOp(e.target.value);
-    setInput(0);
+    setInput("");
+
+    if(op === "+"){
+      result1 = prev + input;
+      setPrev(result1);
+    } else if(op === "-"){
+      result1 = prev - input;
+      setPrev(result1);
+    } else if(op === "*"){
+      result1 = prev * input;
+      setPrev(result1);
+    } else if(op === "/"){
+      result1 = prev / input;
+      setPrev(result1);
+    } 
   }
 
   const deleteAll = () => {
     setInput(0);
     setPrev(0);
-    setOp(0);
+    setOp("");
   }
 
   const deleteOneByOne = () => {
@@ -43,21 +59,26 @@ function Calculator() {
     result = prev + input;
     setPrev(result);
     setInput(result);
+    setOp("");
   } else if(op === "-"){
     result = prev - input;
     setPrev(result);
     setInput(result);
+    setOp("");
   } else if(op === "*"){
     result = prev * input;
     setPrev(result);
     setInput(result);
+    setOp("");
   } else if(op === "/"){
     result = prev / input;
     setPrev(result);
     setInput(result);
+    setOp("");
   } else {
     setPrev(null);
     setInput("Error!")
+    setOp("");
   }
   
 }
@@ -67,7 +88,7 @@ function Calculator() {
           
         <div className="output">
           
-          <div className='previousOp'>{prev}</div>  
+          <div className='previousOp'>{prev} {op}</div>  
           <div className="currentOp">{input}</div>
                     
         </div>  
