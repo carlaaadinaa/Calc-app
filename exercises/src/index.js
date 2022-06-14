@@ -62,36 +62,7 @@ function App () {
     </div>
   );
 }
-/*
-export default function Apps() {
-  const Colors = ["red", "green"];
-  return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-      {Colors.map((color, key) => (
-        <Buttons Color={color} Colors={Colors} key={key} />
-      ))}
-    </div>
-  );
-}
 
-function Buttons({ Color, Colors }) {
-  const [color, setColor] = useState(Color);
-  const handleChange = (e) => {
-    e.preventDefault();
-    setColor(Colors[Math.floor(Math.random() * Colors.length)]);
-  };
-  const style = {
-    backgroundColor: color
-  };
-  return (
-    <button onClick={handleChange} style={style}>
-      Click Me!
-    </button>
-  );
-}
-*/
 ReactDOM.render(
   <div>
     <h1>Play Board</h1>
