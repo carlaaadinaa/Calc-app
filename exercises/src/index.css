@@ -1,0 +1,62 @@
+body {
+  background-color: mintcream;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: slategrey;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.inputAge {
+  margin-left: 12px;
+  margin-top: 10px;
+}
+
+.submit {
+  padding: 10px;
+  margin: 10px 0 0 80px;
+  cursor: pointer;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:black;
+  background-color: white;
+  border-color: grey;
+}
+
+.submit:hover {
+  padding: 10px;
+  margin: 10px 0 0 80px;
+  cursor: pointer;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:white;
+  background-color: black;
+  border-color: black;
+}
+
+button {
+  padding: 10px;
+  margin: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  cursor: pointer;
+}
+
+button.red {
+  background-color: red;
+  border-radius: 50%;
+  border-color: antiquewhite;
+}
+
+button.orange {
+  background-color: orange;
+  border-radius: 50%;
+  border-color: antiquewhite;
+}
+
+button.blue {
+  background-color: blue;
+  border-radius: 50%;
+  border-color: antiquewhite;
+}
