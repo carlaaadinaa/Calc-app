@@ -23,7 +23,7 @@ function NameForm () {
     const addItems = {name, age};
 
     if(name && age){
-      setList((listItem)=>[...listItem,addItems]);
+      setList([...list,addItems]);
       setName("");
       setAge("");
     }
