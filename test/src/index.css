@@ -1,0 +1,79 @@
+body {
+  background-color: mintcream;
+  text-align: center;
+}
+
+h1 {
+  color: slategrey;
+  text-align: center;
+  margin-top: 70px;
+}
+
+button {
+  background-color: rgb(207, 221, 248);
+  color: rgb(8, 8, 136);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border: 0;
+  padding: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  
+}
+
+button:hover {
+  background-color: rgb(8, 8, 136);
+  color: rgb(207, 221, 248);
+  transition-duration: 0.2s;
+}
+
+.game {
+  max-width: 400px;
+  margin: auto;
+}
+
+.card-grid {
+  
+  margin-top: 0px;
+  margin-right: 10px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 170px);
+  grid-template-rows: minmax(100px, auto) repeat(4,150px);
+}
+
+.card {
+  height: 150px;
+  width: 150px;
+  position: relative;
+}
+
+.card img{
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.card .front {
+  transform: rotateX(90deg);
+  position: absolute;
+  transition: all 0.1s;
+  transition-delay: 0.2s;
+}
+
+.flipped .front {
+  transform: rotateX(0deg);
+  transition-delay: 0.2s;
+}
+
+.card .back {
+  transition: all 0.1s;
+  transition-delay: 0.2s;
+}
+
+.flipped .back {
+  transform: rotateX(90deg);
+  transition-delay: 0.2s;
+}
+
