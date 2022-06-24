@@ -6,6 +6,8 @@ import './index.css';
 function NameForm () {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
+  const [list, setList] = useState([]);
+
 
   const setTheName = (e) => {
     setName(e.target.value);
@@ -15,12 +17,23 @@ function NameForm () {
     setAge(e.target.value);
   }
 
-  const handleSubmit = () => {
-    alert("Your name is " + name + " and you have " + age +" years old.");
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const addItems = {name, age};
+
+    if(name && age){
+      setList((listItem)=>[...listItem,addItems]);
+      setName("");
+      setAge("");
+    }
+
+    alert("Your name is " + name + " and you have " + age +" years old."); 
+  }   
 
   return(
-    <form onSubmit={handleSubmit}>
+    <div>
+      <form onSubmit={handleSubmit}>
       <label>
         Name:
         <input type="text" value={name} onChange={setTheName} />
@@ -29,11 +42,19 @@ function NameForm () {
         <input className="inputAge" type="number" value={age} onChange={setTheAge} />
       </label>
     <br></br>
-    <input className='submit' type="submit" value="Submit" />
+    <button className='submit' type="submit">Submit</button>
     </form>
+    <p>The list of submitted data:</p>
+    <ul>
+    {
+      list.map((a)=><div>
+        <li>{a.name}, {a.age}</li>
+        </div>)
+    }
+    </ul>
+  </div>
   );
 }
-
 
 function App () {
   const [inn, setIn] = useState('Welcome to Play Board');
